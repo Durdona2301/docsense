@@ -1,0 +1,9 @@
+.git
+**/bin
+**/obj
+node_modules
+.env
+.impeccable
+artifacts
+tests
+docs

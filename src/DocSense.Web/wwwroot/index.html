@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0862ec" />
+    <meta
+      name="description"
+      content="A local document workspace. Ask questions, find relevant passages, and inspect every source."
+    />
+    <title>DocSense — answers start with evidence</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="/fonts/manrope-variable.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" type="module"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#question">Skip to question</a>
+    <aside class="sidebar" aria-label="Document library">
+      <a class="brand" href="/" aria-label="DocSense home"
+        ><svg viewBox="0 0 32 32" aria-hidden="true">
+          <path
+            d="M16 7C11 3 6 3 2 4v22c5-2 10-1 14 2m0-21c5-4 10-4 14-3v22c-5-2-10-1-14 2V7Z"
+          /></svg
+        ><span>DocSense</span></a
+      >
+      <button class="primary upload-button mutation" id="upload-button">
+        <span data-icon="upload"></span>Upload document
+      </button>
+      <input
+        id="file-input"
+        type="file"
+        accept=".pdf,.md,.txt"
+        hidden
+        aria-label="Choose document"
+      />
+      <div class="library-heading">
+        <h2>Library</h2>
+        <span id="document-count" class="count">0</span>
+      </div>
+      <p class="library-hint">PDF, Markdown, TXT · up to 8 MB</p>
+      <div id="library" class="library" aria-live="polite">
+        <p class="muted">Loading your library…</p>
+      </div>
+      <button id="load-samples" class="text-button mutation">
+        <span data-icon="book"></span>Load sample library
+      </button>
+      <div class="sidebar-footer">
+        <span data-icon="shield"></span>
+        <div>
+          <strong>Local workspace</strong>
+          <p>Your documents stay in this workspace.</p>
+        </div>
+      </div>
+    </aside>
+    <main id="main">
+      <header class="topbar">
+        <span class="workspace-label">Personal workspace</span>
+        <div class="mode-group">
+          <span class="badge" id="mode"
+            ><span data-icon="file"></span
+            ><span id="mode-label">Connecting…</span></span
+          ><span class="connection" id="connection">Checking workspace</span>
+        </div>
+      </header>
+      <div id="alert" class="alert" role="alert" hidden>
+        <span id="alert-text"></span
+        ><button
+          id="dismiss-alert"
+          class="icon-button"
+          aria-label="Dismiss message"
+        >
+          <span data-icon="close"></span>
+        </button>
+      </div>
+      <div
+        id="activity"
+        class="activity"
+        role="status"
+        aria-live="polite"
+      ></div>
+      <section class="workspace" id="workspace">
+        <div class="intro">
+          <h1>Ask your documents</h1>
+          <p>Get clear answers from your own files.</p>
+        </div>
+        <form id="ask-form">
+          <label class="sr-only" for="question">Your question</label>
+          <div class="composer">
+            <textarea
+              id="question"
+              placeholder="What would you like to know?"
+              rows="2"
+              minlength="3"
+              maxlength="1500"
+              required
+            ></textarea
+            ><button class="primary" type="submit" id="ask-button" disabled>
+              <span data-icon="send"></span
+              ><span id="ask-label">Ask question</span>
+            </button>
+          </div>
+          <div class="composer-footer">
+            <label for="scope"
+              ><span data-icon="search"></span
+              ><span class="sr-only">Search in</span
+              ><select id="scope" aria-label="Search in document">
+                <option value="">All documents</option>
+              </select></label
+            ><span>Ctrl / ⌘ + Enter to ask</span>
+          </div>
+        </form>
+        <section id="welcome" class="welcome">
+          <span class="welcome-icon" data-icon="book"></span>
+          <h2>Your next answer is in your files.</h2>
+          <p>
+            Add a document to get started, or explore with a small, fictional
+            sample library.
+          </p>
+          <button class="secondary mutation" id="try-sample">
+            Try the sample library<span data-icon="arrow"></span>
+          </button>
+          <p class="fine-print">No account. No API key required.</p>
+        </section>
+        <section id="ready" class="ready" hidden>
+          <p>Start with a question</p>
+          <div class="suggestions">
+            <button
+              type="button"
+              class="suggestion"
+              data-question="How long is the trial period?"
+            >
+              How long is the trial period?<span
+                data-icon="arrow"
+              ></span></button
+            ><button
+              type="button"
+              class="suggestion"
+              data-question="How do I export records?"
+            >
+              How do I export records?<span data-icon="arrow"></span></button
+            ><button
+              type="button"
+              class="suggestion"
+              data-question="What are the API rate limits?"
+            >
+              What are the API rate limits?<span data-icon="arrow"></span>
+            </button>
+          </div>
+          <p class="fine-print">
+            Example questions for the sample library. Ask about any document you
+            upload.
+          </p>
+        </section>
+        <section id="result" hidden aria-labelledby="answer-heading">
+          <div class="answer" id="answer-panel">
+            <span class="answer-icon" data-icon="file"></span>
+            <div class="answer-content">
+              <div class="answer-top">
+                <h2 id="answer-heading">Answer</h2>
+                <button
+                  type="button"
+                  id="copy-answer"
+                  class="icon-button"
+                  aria-label="Copy answer"
+                >
+                  <span data-icon="copy"></span>
+                </button>
+              </div>
+              <p id="asked-question" class="asked-question"></p>
+              <p id="answer-text"></p>
+              <div
+                id="citations"
+                class="citations"
+                aria-label="Answer citations"
+              ></div>
+              <p id="answer-notice" class="fine-print"></p>
+            </div>
+          </div>
+          <section
+            id="sources-section"
+            class="sources-section"
+            aria-labelledby="sources-heading"
+          >
+            <h2 id="sources-heading">Sources</h2>
+            <p class="muted source-description">
+              Inspect the original passages behind this result.
+            </p>
+            <div id="sources" class="sources"></div>
+          </section>
+        </section>
+        <details class="how-it-works">
+          <summary>
+            How DocSense finds answers<span data-icon="chevron"></span>
+          </summary>
+          <p>
+            Documents are split into overlapping passages and stored in your
+            local PostgreSQL database. Extractive mode finds keywords and shows
+            original text. With Ollama enabled, DocSense also searches
+            embeddings and generates answers with source references.
+          </p>
+          <p>
+            Questions are independent; previous answers are not sent as chat
+            history. Model answers can be wrong: always inspect their sources.
+            Scanned PDFs need OCR before upload.
+          </p>
+        </details>
+      </section>
+      <section id="reader" class="reader" hidden aria-labelledby="reader-title">
+        <button class="text-button" id="close-reader">
+          <span data-icon="back"></span>Back to questions
+        </button>
+        <div class="reader-heading">
+          <div>
+            <h1 id="reader-title"></h1>
+            <p id="reader-meta" class="muted"></p>
+          </div>
+          <button class="secondary mutation" id="reindex-button" hidden>
+            <span data-icon="refresh"></span>Create embeddings
+          </button>
+        </div>
+        <div id="reader-content"></div>
+      </section>
+      <footer class="main-footer">
+        <span>Answers start with evidence.</span
+        ><a
+          href="https://github.com/Durdona2301/docsense"
+          target="_blank"
+          rel="noopener noreferrer"
+          >View on GitHub<span data-icon="external"></span
+        ></a>
+      </footer>
+    </main>
+    <div id="drop-overlay" class="drop-overlay" hidden>
+      <span data-icon="upload"></span>
+      <p>Drop one document to add it to your library</p>
+      <span>PDF, Markdown or TXT · up to 8 MB</span>
+    </div>
+  </body>
+</html>

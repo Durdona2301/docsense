@@ -1,0 +1,13 @@
+{
+  "name": "docsense-browser-tests",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "format": "prettier --write src/DocSense.Web/wwwroot/*.{js,css,html} tests/browser/*.ts playwright.config.ts",
+    "format:check": "prettier --check src/DocSense.Web/wwwroot/*.{js,css,html} tests/browser/*.ts playwright.config.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "prettier": "3.6.2"
+  }
+}

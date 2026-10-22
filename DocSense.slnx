@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/DocSense.Web/DocSense.Web.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/DocSense.Tests/DocSense.Tests.csproj" />
+  </Folder>
+</Solution>

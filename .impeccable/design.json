@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-22T18:26:59.367335+00:00",
+  "title": "Design System: DocSense",
+  "extensions": {
+    "colorMeta": {
+      "blue": {
+        "role": "primary",
+        "displayName": "Action Blue",
+        "tonalRamp": [
+          "oklch(15% 0.2216 260.57)",
+          "oklch(26% 0.2216 260.57)",
+          "oklch(38% 0.2216 260.57)",
+          "oklch(49% 0.2216 260.57)",
+          "oklch(61% 0.2216 260.57)",
+          "oklch(72% 0.2216 260.57)",
+          "oklch(84% 0.2216 260.57)",
+          "oklch(95% 0.2216 260.57)"
+        ]
+      },
+      "blue-hover": {
+        "role": "primary",
+        "displayName": "Pressed Blue",
+        "tonalRamp": [
+          "oklch(15% 0.1965 261.17)",
+          "oklch(26% 0.1965 261.17)",
+          "oklch(38% 0.1965 261.17)",
+          "oklch(49% 0.1965 261.17)",
+          "oklch(61% 0.1965 261.17)",
+          "oklch(72% 0.1965 261.17)",
+          "oklch(84% 0.1965 261.17)",
+          "oklch(95% 0.1965 261.17)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Deep Ink",
+        "tonalRamp": [
+          "oklch(15% 0.0487 259.87)",
+          "oklch(26% 0.0487 259.87)",
+          "oklch(38% 0.0487 259.87)",
+          "oklch(49% 0.0487 259.87)",
+          "oklch(61% 0.0487 259.87)",
+          "oklch(72% 0.0487 259.87)",
+          "oklch(84% 0.0487 259.87)",
+          "oklch(95% 0.0487 259.87)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Slate",
+        "tonalRamp": [
+          "oklch(15% 0.0365 261.61)",
+          "oklch(26% 0.0365 261.61)",
+          "oklch(38% 0.0365 261.61)",
+          "oklch(49% 0.0365 261.61)",
+          "oklch(61% 0.0365 261.61)",
+          "oklch(72% 0.0365 261.61)",
+          "oklch(84% 0.0365 261.61)",
+          "oklch(95% 0.0365 261.61)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "tonalRamp": [
+          "oklch(15% 0.0146 264.50)",
+          "oklch(26% 0.0146 264.50)",
+          "oklch(38% 0.0146 264.50)",
+          "oklch(49% 0.0146 264.50)",
+          "oklch(61% 0.0146 264.50)",
+          "oklch(72% 0.0146 264.50)",
+          "oklch(84% 0.0146 264.50)",
+          "oklch(95% 0.0146 264.50)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Reading White",
+        "tonalRamp": [
+          "oklch(15% 0.0000 0.00)",
+          "oklch(26% 0.0000 0.00)",
+          "oklch(38% 0.0000 0.00)",
+          "oklch(49% 0.0000 0.00)",
+          "oklch(61% 0.0000 0.00)",
+          "oklch(72% 0.0000 0.00)",
+          "oklch(84% 0.0000 0.00)",
+          "oklch(95% 0.0000 0.00)"
+        ]
+      },
+      "sidebar": {
+        "role": "neutral",
+        "displayName": "Library Gray",
+        "tonalRamp": [
+          "oklch(15% 0.0041 271.37)",
+          "oklch(26% 0.0041 271.37)",
+          "oklch(38% 0.0041 271.37)",
+          "oklch(49% 0.0041 271.37)",
+          "oklch(61% 0.0041 271.37)",
+          "oklch(72% 0.0041 271.37)",
+          "oklch(84% 0.0041 271.37)",
+          "oklch(95% 0.0041 271.37)"
+        ]
+      },
+      "pale": {
+        "role": "primary",
+        "displayName": "Evidence Wash",
+        "tonalRamp": [
+          "oklch(15% 0.0132 262.38)",
+          "oklch(26% 0.0132 262.38)",
+          "oklch(38% 0.0132 262.38)",
+          "oklch(49% 0.0132 262.38)",
+          "oklch(61% 0.0132 262.38)",
+          "oklch(72% 0.0132 262.38)",
+          "oklch(84% 0.0132 262.38)",
+          "oklch(95% 0.0132 262.38)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Primary workspace heading."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Section headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Inherited interface text."
+      },
+      "reading": {
+        "displayName": "Reading",
+        "purpose": "Answer text with generous leading."
+      }
+    },
+    "shadows": [
+      {
+        "name": "composer-focus",
+        "value": "0 3px 16px #0862ec12",
+        "purpose": "Focus within the question composer."
+      },
+      {
+        "name": "source-focus",
+        "value": "0 4px 15px #0862ec13",
+        "purpose": "Evidence selected by a citation."
+      }
+    ],
+    "motion": [
+      {
+        "name": "control-transition",
+        "value": "0.16s ease-out",
+        "purpose": "Background and color changes; disabled for reduced motion."
+      },
+      {
+        "name": "answer-arrive",
+        "value": "0.35s cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Reveal via clip-path inset and opacity; disabled for reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone-max",
+        "value": "720px"
+      },
+      {
+        "name": "compact-max",
+        "value": "1100px"
+      },
+      {
+        "name": "wide-min",
+        "value": "1700px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "description": "The saturated blue main action.",
+      "html": "<button class=\"ds-primary\">Ask question</button>",
+      "css": ".ds-primary{font-family:Manrope,sans-serif;background:var(--blue,#0862ec);color:var(--paper,#fff);border:1px solid var(--blue,#0862ec);border-radius:8px;padding:14px 19px;min-height:48px;font-size:15px;font-weight:650;cursor:pointer;transition:background .16s ease-out}.ds-primary:hover:not(:disabled){background:var(--blue-hover,#034bc2)}.ds-primary:focus-visible{outline:3px solid #92b8ff;outline-offset:4px}.ds-primary:disabled{opacity:.5;cursor:not-allowed}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}",
+      "refersTo": "button-primary"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "description": "A quieter outlined action.",
+      "html": "<button class=\"ds-secondary\">Try the sample library</button>",
+      "css": ".ds-secondary{font-family:Manrope,sans-serif;background:var(--paper,#fff);color:var(--ink,#101e35);border:1px solid #ccd6e5;border-radius:8px;padding:10px 16px;min-height:44px;font-size:15px;font-weight:600;cursor:pointer;transition:background .16s ease-out}.ds-secondary:hover{background:var(--pale,#f1f6ff)}.ds-secondary:focus-visible{outline:3px solid #92b8ff;outline-offset:4px}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none}}",
+      "refersTo": "button-secondary"
+    },
+    {
+      "name": "Question Composer",
+      "kind": "input",
+      "description": "A full question field with container-level focus.",
+      "html": "<div class=\"ds-composer\"><textarea class=\"ds-question\" aria-label=\"Your question\" placeholder=\"What would you like to know?\" rows=\"2\"></textarea></div>",
+      "css": ".ds-composer{background:var(--paper,#fff);border:1px solid #c9d4e5;border-radius:10px;padding:12px 13px 12px 20px;transition:box-shadow .16s ease-out,border-color .16s ease-out}.ds-composer:focus-within{border-color:#73a6f5;box-shadow:0 3px 16px #0862ec12}.ds-question{font-family:Manrope,sans-serif;width:100%;border:0;outline:none;background:transparent;resize:vertical;min-height:64px;max-height:200px;padding:13px 0;font-size:17px;line-height:1.6;color:var(--ink,#101e35);caret-color:var(--blue,#0862ec)}.ds-question::placeholder{color:#6a768b}@media(prefers-reduced-motion:reduce){.ds-composer{transition:none}}",
+      "refersTo": "composer"
+    },
+    {
+      "name": "Library Navigation",
+      "kind": "nav",
+      "description": "Document selection with a pale selected row.",
+      "html": "<nav aria-label=\"Documents\"><div class=\"ds-document\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z M14 2v6h6\"/></svg><button class=\"ds-document-name\" aria-current=\"true\">Sample handbook.md</button></div></nav>",
+      "css": ".ds-document{display:flex;align-items:center;gap:8px;padding:10px 8px;border-radius:8px;background:#e9f1ff}.ds-document svg{width:20px;height:20px;fill:none;stroke:var(--blue,#0862ec);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.ds-document-name{font-family:Manrope,sans-serif;background:transparent;border:0;padding:0;color:var(--ink,#101e35);font-size:13px;font-weight:650;line-height:1.55;text-align:left;overflow-wrap:anywhere;cursor:pointer}.ds-document-name:hover{color:var(--blue,#0862ec)}.ds-document-name:focus-visible{outline:3px solid #92b8ff;outline-offset:4px}"
+    },
+    {
+      "name": "Mode Badge",
+      "kind": "chip",
+      "description": "Compact neutral status identification.",
+      "html": "<span class=\"ds-mode\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z M14 2v6h6\"/></svg>Extractive mode</span>",
+      "css": ".ds-mode{font-family:Manrope,sans-serif;display:inline-flex;align-items:center;gap:8px;padding:9px 12px;background:#f5f7fb;color:var(--ink,#101e35);border-radius:8px;font-size:12px;font-weight:600}.ds-mode svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}"
+    },
+    {
+      "name": "Citation",
+      "kind": "chip",
+      "description": "An evidence navigation button.",
+      "html": "<button class=\"ds-citation\" aria-label=\"Inspect source 1\">[1]</button>",
+      "css": ".ds-citation{font-family:Manrope,sans-serif;font-size:11px;min-height:32px;min-width:32px;background:#dceaff;color:#084eae;border:0;border-radius:5px;padding:6px;cursor:pointer;transition:background .16s ease-out}.ds-citation:hover{background:#c9ddfd}.ds-citation:focus-visible{outline:3px solid #92b8ff;outline-offset:4px}@media(prefers-reduced-motion:reduce){.ds-citation{transition:none}}"
+    },
+    {
+      "name": "Source Card",
+      "kind": "card",
+      "description": "An inspectable original passage with restrained evidence focus.",
+      "html": "<article class=\"ds-source\" tabindex=\"0\"><h3 class=\"ds-source-title\">1. Sample handbook.md</h3><blockquote class=\"ds-passage\">This fictional sample passage is shown exactly as indexed.</blockquote></article>",
+      "css": ".ds-source{font-family:Manrope,sans-serif;border:1px solid var(--line,#e0e5ef);border-radius:9px;padding:17px;min-width:0;background:#fbfcff;color:var(--ink,#101e35)}.ds-source:focus{border-color:#75a7ef;box-shadow:0 4px 15px #0862ec13}.ds-source:focus-visible{outline:3px solid #92b8ff;outline-offset:4px}.ds-source-title{font-size:12px;font-weight:700;line-height:1.65;margin:0 0 14px;overflow-wrap:anywhere}.ds-passage{margin:0;background:var(--paper,#fff);border:1px solid #e5eaf2;border-radius:6px;padding:12px;font-size:13px;color:#273953;line-height:1.85;white-space:pre-wrap;overflow-wrap:anywhere}"
+    },
+    {
+      "name": "Answer Panel",
+      "kind": "card",
+      "description": "A pale blue reading surface.",
+      "html": "<section class=\"ds-answer\"><h2 class=\"ds-answer-title\">Relevant passage</h2><p class=\"ds-answer-text\">An answer is easiest to trust when its evidence is close at hand.</p></section>",
+      "css": ".ds-answer{font-family:Manrope,sans-serif;background:var(--pale,#f1f6ff);border:1px solid #d9e7fc;border-radius:10px;padding:26px 26px 22px;color:var(--ink,#101e35)}.ds-answer-title{font-size:14px;font-weight:700;line-height:1.25;color:#0754c9;margin:0 0 10px}.ds-answer-text{font-size:18px;line-height:1.85;white-space:pre-wrap;overflow-wrap:anywhere;max-width:74ch;margin:0}@media(max-width:720px){.ds-answer{padding:18px 15px}.ds-answer-text{font-size:14px;line-height:1.9}}",
+      "refersTo": "answer"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Clear Evidence Workspace",
+    "overview": "DocSense uses the user-selected conventional white-and-blue product interface: a white reading field, a cool pale-gray library, saturated blue actions and self-hosted humanist sans typography. Hairline boundaries and gently rounded controls make the workspace feel direct and familiar.\n\nThe visual emphasis belongs to questions, readable results and inspectable passages. Typography and pale tonal panels provide hierarchy; outline SVG icons support actions without competing with the text.",
+    "keyCharacteristics": [
+      "White reading surfaces with cool neutral support regions.",
+      "Blue for primary actions, interaction and evidence emphasis.",
+      "One self-hosted type family with strong headings and generous reading leading.",
+      "Fine borders, restrained rounding and state-driven shadows."
+    ],
+    "rules": [
+      {
+        "name": "The Action Accent Rule",
+        "body": "Use saturated blue to identify actions and interactive evidence; use pale blue for broad emphasis surfaces.",
+        "section": "colors"
+      },
+      {
+        "name": "The State Depth Rule",
+        "body": "Keep ordinary surfaces flat; reserve the observed soft shadows for input focus and evidence focus.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use self-hosted Manrope for display and body text.",
+      "Do use pale surfaces and fine borders to structure reading regions.",
+      "Do keep citation focus visible and preserve readable, wrapping source text.",
+      "Do collapse the workspace into a coherent single-column reading flow on phones.",
+      "Do retain visible keyboard focus and respect reduced motion."
+    ],
+    "donts": [
+      "Don't apply persistent decorative shadows to ordinary cards.",
+      "Don't use saturated blue as the general reading background.",
+      "Don't substitute glyph characters for the implemented outline SVG icons.",
+      "Don't promote isolated metadata sizes into the shared typography scale."
+    ]
+  }
+}

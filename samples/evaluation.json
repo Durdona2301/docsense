@@ -1,0 +1,9 @@
+[
+  { "question": "How long is the trial period?", "document": "Product handbook.md", "contains": "14-day trial" },
+  { "question": "Where can owners export records?", "document": "Product handbook.md", "contains": "CSV" },
+  { "question": "When is standard support available?", "document": "Product handbook.md", "contains": "09:00 to 17:00 UTC" },
+  { "question": "What are the API rate limits?", "document": "API reference.txt", "contains": "60 requests per minute" },
+  { "question": "How does API authentication work?", "document": "API reference.txt", "contains": "Authorization header" },
+  { "question": "What pagination limit is supported?", "document": "API reference.txt", "contains": "between 1 and 100" },
+  { "question": "What are the elephant migration routes?", "abstain": true }
+]

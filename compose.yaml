@@ -1,0 +1,35 @@
+name: docsense
+services:
+  db:
+    image: pgvector/pgvector:0.8.1-pg17
+    environment:
+      POSTGRES_DB: docsense
+      POSTGRES_USER: docsense
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-docsense-local-dev-only}
+    ports:
+      - "127.0.0.1:${DOCSENSE_DB_PORT:-55432}:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U docsense -d docsense"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  web:
+    build: .
+    ports:
+      - "127.0.0.1:${DOCSENSE_PORT:-5076}:8080"
+    environment:
+      ConnectionStrings__Database: Host=db;Database=docsense;Username=docsense;Password=${POSTGRES_PASSWORD:-docsense-local-dev-only}
+      Ai__Enabled: ${DOCSENSE_AI_ENABLED:-false}
+      Ai__BaseUrl: ${DOCSENSE_OLLAMA_URL:-http://host.docker.internal:11434}
+      Ai__EmbeddingModel: ${DOCSENSE_EMBEDDING_MODEL:-embeddinggemma}
+      Ai__ChatModel: ${DOCSENSE_CHAT_MODEL:-gemma3:4b}
+      Ai__Dimensions: ${DOCSENSE_EMBEDDING_DIMENSIONS:-768}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  postgres-data:
